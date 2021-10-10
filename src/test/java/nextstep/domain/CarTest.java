@@ -32,4 +32,40 @@ class CarTest {
                 .isThrownBy(() -> new Car("yellow"))
                 .withMessage("자동차 이름은 5자 이하입니다.");
     }
+
+    @Test
+    @DisplayName("레이스를 진행하면서 랜덤 값이 4이상이면 전진한다.")
+    void raceOnceForward() {
+        //given
+        Car car = new Car("blue");
+
+        //when
+        car.raceOnce(new MoveStrategy() {
+            @Override
+            public boolean canMove() {
+                return true;
+            }
+        });
+
+        //then
+        assertThat(car.getPosition()).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("레이스를 진행하면서 랜덤 값이 3이하이면 멈춘다.")
+    void raceOnceStop() {
+        //given
+        Car car = new Car("blue");
+
+        //when
+        car.raceOnce(new MoveStrategy() {
+            @Override
+            public boolean canMove() {
+                return false;
+            }
+        });
+
+        //then
+        assertThat(car.getPosition()).isZero();
+    }
 }
