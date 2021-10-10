@@ -7,7 +7,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 class CarTest {
-
     @Test
     @DisplayName("자동차 이름이 문자열 5자 이하인 객체를 생성한다.")
     void create() {
