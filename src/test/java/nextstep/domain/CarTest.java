@@ -24,11 +24,11 @@ class CarTest {
     @DisplayName("자동차 이름이 이름이 문자열 5자를 초과하면 예외가 발생한다.")
     void validateCarName() {
         //given
-        String name = "yellow";
+        String invalidName = "yellow";
 
         //when //then
         assertThatIllegalArgumentException()
-                .isThrownBy(() -> new Car("yellow"))
+                .isThrownBy(() -> new Car(invalidName))
                 .withMessage("자동차 이름은 5자 이하입니다.");
     }
 
@@ -39,12 +39,7 @@ class CarTest {
         Car car = new Car("blue");
 
         //when
-        car.raceOnce(new MoveStrategy() {
-            @Override
-            public boolean canMove() {
-                return true;
-            }
-        });
+        car.move(() -> true);
 
         //then
         assertThat(car.getPosition()).isEqualTo(1);
@@ -57,12 +52,7 @@ class CarTest {
         Car car = new Car("blue");
 
         //when
-        car.raceOnce(new MoveStrategy() {
-            @Override
-            public boolean canMove() {
-                return false;
-            }
-        });
+        car.move(() -> false);
 
         //then
         assertThat(car.getPosition()).isZero();

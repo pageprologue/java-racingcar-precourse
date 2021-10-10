@@ -18,7 +18,7 @@ public class Car {
         }
     }
 
-    public void raceOnce(MoveStrategy moveStrategy) {
+    public void move(MoveStrategy moveStrategy) {
         if (moveStrategy.canMove()) {
             position++;
         }

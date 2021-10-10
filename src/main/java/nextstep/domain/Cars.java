@@ -18,6 +18,12 @@ public class Cars {
         return new Cars(cars);
     }
 
+    public void raceOnce(MoveStrategy moveStrategy) {
+        for (Car car : cars) {
+            car.move(moveStrategy);
+        }
+    }
+
     public List<Car> getCars() {
         return cars;
     }
