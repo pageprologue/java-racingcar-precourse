@@ -4,15 +4,15 @@ import java.util.List;
 
 public class RaceGame {
     private final Cars cars;
-    private final int round;
+    private final Lap lap;
 
-    public RaceGame(Cars cars, int round) {
+    public RaceGame(Cars cars, int count) {
         this.cars = cars;
-        this.round = round;
+        this.lap = new Lap(count);
     }
 
     public void race(MoveStrategy moveStrategy) {
-        for (int i = 0; i < round; i++) {
+        for (int i = 0; i < lap.getCount(); i++) {
             cars.raceOnce(moveStrategy);
         }
     }

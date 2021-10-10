@@ -13,10 +13,10 @@ class RaceGameTest {
     void create() {
         //given
         Cars cars = Cars.of(Arrays.asList("red", "green", "blue"));
-        int round = 3;
+        int count = 3;
 
         //when
-        RaceGame raceGame = new RaceGame(cars, round);
+        RaceGame raceGame = new RaceGame(cars, count);
 
         //then
         assertThat(raceGame.getCars()).hasSize(3);
@@ -27,9 +27,9 @@ class RaceGameTest {
     void race() {
         //given
         Cars cars = Cars.of(Arrays.asList("red", "green", "blue"));
-        int round = 3;
+        int count = 3;
 
-        RaceGame raceGame = new RaceGame(cars, round);
+        RaceGame raceGame = new RaceGame(cars, count);
 
         //when
         raceGame.race(() -> true);
