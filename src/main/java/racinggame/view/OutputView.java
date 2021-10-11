@@ -1,6 +1,6 @@
-package nextstep.view;
+package racinggame.view;
 
-import nextstep.domain.Car;
+import racinggame.domain.Car;
 
 import java.util.Collections;
 import java.util.List;

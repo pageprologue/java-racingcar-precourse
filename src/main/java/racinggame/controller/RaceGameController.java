@@ -1,9 +1,8 @@
-package nextstep.controller;
+package racinggame.controller;
 
-import nextstep.domain.GameState;
-import nextstep.domain.RaceGame;
-import nextstep.view.InputView;
-import nextstep.view.OutputView;
+import racinggame.domain.RaceGame;
+import racinggame.view.InputView;
+import racinggame.view.OutputView;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package nextstep.domain;
+package racinggame.domain;
 
 public class Car {
     private static final int MIN_CAR_NAME_LENGTH = 1;

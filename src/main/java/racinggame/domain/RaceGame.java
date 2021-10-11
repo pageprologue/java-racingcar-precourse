@@ -1,4 +1,4 @@
-package nextstep.domain;
+package racinggame.domain;
 
 import java.util.List;
 
@@ -33,6 +33,6 @@ public class RaceGame {
     }
 
     public int getLap() {
-        return 0;
+        return lap.getCount();
     }
 }

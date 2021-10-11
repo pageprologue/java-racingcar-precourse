@@ -1,6 +1,6 @@
 package racinggame;
 
-import nextstep.controller.RaceGameController;
+import racinggame.controller.RaceGameController;
 
 public class Application {
 
