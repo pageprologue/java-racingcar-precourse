@@ -3,6 +3,8 @@ package nextstep.domain;
 import java.util.List;
 
 public class RaceGame {
+    private static final RandomMoveStrategy moveStrategy = new RandomMoveStrategy();
+
     private final Cars cars;
     private final Lap lap;
     private final Winner winner;
@@ -13,11 +15,17 @@ public class RaceGame {
         this.winner = new Winner();
     }
 
-    public void race() {
-        for (int i = 0; i < lap.getCount(); i++) {
-            cars.raceOnce(new RandomMoveStrategy());
-        }
+    public boolean isPlaying() {
+        return lap.isPlaying();
+    }
+
+    public void raceOnce() {
+        cars.raceOnce(moveStrategy);
+    }
+
+    public List<String> getWinner() {
         winner.compare(cars.getCars());
+        return winner.getNames();
     }
 
     public List<Car> getCars() {
@@ -25,10 +33,6 @@ public class RaceGame {
     }
 
     public int getLap() {
-        return lap.getCount();
-    }
-
-    public List<String> getWinner() {
-        return winner.getNames();
+        return 0;
     }
 }

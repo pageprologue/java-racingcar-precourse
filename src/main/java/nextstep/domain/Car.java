@@ -8,11 +8,11 @@ public class Car {
     private int position;
 
     protected Car(String name) {
-        validateCarName(name);
+        validateCar(name);
         this.name = name;
     }
 
-    private void validateCarName(String name) {
+    private void validateCar(String name) {
         if (name.length() < MIN_CAR_NAME_LENGTH || name.length() > MAX_CAR_NAME_LENGTH) {
             throw new IllegalArgumentException("자동차 이름은 1 ~ 5자 입니다.");
         }
