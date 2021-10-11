@@ -25,6 +25,7 @@ public class OutputView {
             String raceResult = String.join("", Collections.nCopies(car.getPosition(), RACE_RESULT_DELIMITER));
             System.out.printf("%s : %s%n", car.getName(), raceResult);
         }
+
         System.out.println();
     }
 

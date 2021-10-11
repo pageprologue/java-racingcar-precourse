@@ -8,6 +8,7 @@ public class Winner {
 
     public void compare(List<Car> cars) {
         int maxPosition = maxPosition(cars);
+
         for (Car car : cars) {
             comparePosition(maxPosition, car);
         }
@@ -15,9 +16,11 @@ public class Winner {
     
     private int maxPosition(List<Car> cars) {
         int maxPosition = 0;
+
         for (Car car : cars) {
             maxPosition = Math.max(maxPosition, car.getPosition());
         }
+
         return maxPosition;
     }
 

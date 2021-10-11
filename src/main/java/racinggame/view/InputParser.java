@@ -13,10 +13,12 @@ public class InputParser {
 
     public static List<String> splitValidate(String input) {
         List<String> carNames = new ArrayList<>();
+
         for (String carName : input.split(CAR_NAME_DELIMITER)) {
             validateCar(carName.trim());
             carNames.add(carName.trim());
         }
+
         return carNames;
     }
 

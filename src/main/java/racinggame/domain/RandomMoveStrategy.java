@@ -3,7 +3,6 @@ package racinggame.domain;
 import nextstep.utils.Randoms;
 
 public class RandomMoveStrategy implements MoveStrategy {
-
     private static final int MIN_RANDOM_NUMBER = 0;
     private static final int MAX_RANDOM_NUMBER = 9;
     private static final int STOP_THRESHOLD = 3;
