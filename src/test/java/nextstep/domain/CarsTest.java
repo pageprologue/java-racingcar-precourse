@@ -30,6 +30,6 @@ class CarsTest {
         //given //when //then
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> Cars.of(Arrays.asList("red", "yellow", "blue")))
-                .withMessage("자동차 이름은 5자 이하입니다.");
+                .withMessage("자동차 이름은 1 ~ 5자 입니다.");
     }
 }

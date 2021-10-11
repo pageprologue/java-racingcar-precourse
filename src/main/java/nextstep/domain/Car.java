@@ -1,20 +1,20 @@
 package nextstep.domain;
 
 public class Car {
+    private static final int MIN_CAR_NAME_LENGTH = 1;
     private static final int MAX_CAR_NAME_LENGTH = 5;
 
     private final String name;
     private int position;
 
-    public Car(String name) {
+    protected Car(String name) {
         validateCarName(name);
         this.name = name;
-        this.position = 0;
     }
 
     private void validateCarName(String name) {
-        if (name.length() > MAX_CAR_NAME_LENGTH) {
-            throw new IllegalArgumentException("자동차 이름은 5자 이하입니다.");
+        if (name.length() < MIN_CAR_NAME_LENGTH || name.length() > MAX_CAR_NAME_LENGTH) {
+            throw new IllegalArgumentException("자동차 이름은 1 ~ 5자 입니다.");
         }
     }
 

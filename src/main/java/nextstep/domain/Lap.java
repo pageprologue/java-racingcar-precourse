@@ -3,7 +3,7 @@ package nextstep.domain;
 public class Lap {
     private final int count;
 
-    public Lap(int count) {
+    protected Lap(int count) {
         validateLap(count);
         this.count = count;
     }

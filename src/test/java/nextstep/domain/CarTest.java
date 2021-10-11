@@ -2,13 +2,15 @@ package nextstep.domain;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 class CarTest {
     @Test
-    @DisplayName("자동차 이름이 문자열 5자 이하인 객체를 생성한다.")
+    @DisplayName("이름과 위치를 갖는 자동차 객체를 생성한다.")
     void create() {
         //given
         String name = "red";
@@ -18,10 +20,12 @@ class CarTest {
 
         //then
         assertThat(car.getName()).isEqualTo(name);
+        assertThat(car.getPosition()).isZero();
     }
 
-    @Test
-    @DisplayName("자동차 이름이 이름이 문자열 5자를 초과하면 예외가 발생한다.")
+    @ParameterizedTest
+    @ValueSource(strings = {"", "yellow"})
+    @DisplayName("자동차 이름이 1 ~ 5자 사이가 아니면 예외가 발생한다.")
     void validateCarName() {
         //given
         String invalidName = "yellow";
@@ -29,7 +33,7 @@ class CarTest {
         //when //then
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> new Car(invalidName))
-                .withMessage("자동차 이름은 5자 이하입니다.");
+                .withMessage("자동차 이름은 1 ~ 5자 입니다.");
     }
 
     @Test
